@@ -6,13 +6,13 @@ class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
     username = Column(String, index=True, unique=True)
     is_admin = Column(Boolean, default=False, nullable=False)
     # Pictures from the bucket user_pictures in supabase
+    # pre-processed before upload with image_processing.py
     picture = Column(String, index=True)
     email = Column(String, index=True)
-    password = Column(String, index=True)
+    password_hash = Column("hashed_password", String, nullable=False)
 
 
 class Blog(Base):
@@ -21,6 +21,7 @@ class Blog(Base):
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String, index=True)
     text = Column(String, index=True)
+    picture = Column(String, nullable=True)
 
 
 # One user has many blogs

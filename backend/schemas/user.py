@@ -10,8 +10,12 @@ class UserBase(BaseModel):
 
 
 # Schema for creating a new user
-class UserCreate(UserBase):
+class UserCreate(BaseModel):
+    email: EmailStr
+    username: str
+    picture: str | None = None
     password: str
+    model_config = ConfigDict(extra="forbid")
 
 
 # Schema for updating a user

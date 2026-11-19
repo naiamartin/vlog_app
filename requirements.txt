@@ -9,3 +9,8 @@ pytest
 python-dotenv
 psycopg[binary]
 email-validator
+jinja2
+supabase
+pwdlib[argon2]
+Pillow
+rembg[cpu]

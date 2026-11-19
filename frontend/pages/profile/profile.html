@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | VlogApp</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="form">
+        <h1>Your profile</h1>
+        <p class="subtitle">Your VlogApp account details.</p>
+
+        {% if user %}
+        <dl class="profile-details">
+            <dt>Username</dt>
+            <dd>{{ user.username }}</dd>
+
+            <dt>Email</dt>
+            <dd>{{ user.email }}</dd>
+        </dl>
+        {% else %}
+        <p class="empty-state">Profile details are unavailable.</p>
+        {% endif %}
+
+        <p class="swipe"><a href="/friends">Friends</a></p>
+    </main>
+</body>
+</html>

@@ -10,3 +10,4 @@ db.db
 .terraform/
 *.tfstate
 *.tfstate.*
+node_modules

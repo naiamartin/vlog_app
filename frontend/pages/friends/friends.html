@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends | VlogApp</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="form">
+        <h1>Friends</h1>
+        <p class="subtitle">People you follow on VlogApp.</p>
+
+        {% if friends %}
+        <ul class="friend-list">
+            {% for friend in friends %}
+            <li>
+                <a href="/friends/{{ friend.id }}">{{ friend.username }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="empty-state">No friends yet.</p>
+        {% endif %}
+
+        <p class="swipe"><a href="/profile">Your profile</a></p>
+    </main>
+</body>
+</html>
